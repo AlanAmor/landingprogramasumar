@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa Sumar + | Ministerio de Salud Santa Fe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" style="border-bottom: 3px solid #fbbf24;">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#home">
+                <img src="/img/minsalud.jpg" alt="Logo Ministerio Salud" class="navbar-logo me-1">
+                <span class="fw-bold">Programa Sumar +</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acerca-de">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning text-dark fw-bold ms-2" href="#contacto">
+                            <i class="fas fa-envelope me-2"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section pt-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center mb-5 pb-5">
+                <div class="col-lg-6 text-center mb-4 mb-lg-0">
+                    <img src="/img/minsalud3.png" alt="Logo Ministerio de Salud" class="img-fluid logo-hero" style="max-width: 280px; animation: slideInLeft 0.8s ease;">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold text-primary mb-3" style="animation: slideInRight 0.8s ease;">
+                        Bienvenido al
+                        <span class="text-warning">Programa Sumar +</span>
+                    </h1>
+                    <p class="lead text-muted mb-4" style="font-size: 1.2rem; animation: fadeIn 1.2s ease;">
+                        Página destinada a reclamos y consultas de los efectores de salud sobre el programa SUMAR&nbsp;+
+                    </p>
+                    <p class="text-secondary mb-4">
+                        Bienvenido al sistema integral de gestión de reclamos y consultas del Programa <span style="white-space: nowrap;">SUMAR&nbsp;+.</span> 
+                        Aquí puedes registrar tus inquietudes y recibir asistencia especializada.
+                    </p>
+                    <button class="btn btn-primary btn-lg" onclick="scrollToContacto()">
+                        <i class="fas fa-arrow-down me-2"></i>Ir a Reclamos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acerca de -->
+    <section id="acerca-de" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 text-primary fw-bold">Conoce el Programa Sumar +</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heart text-danger" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h5 class="card-title">Salud Integral</h5>
+                            <p class="card-text">Comprometidos con la salud integral de todos los ciudadanos de Santa Fe.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-headset text-primary" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h5 class="card-title">Atención 24/7</h5>
+                            <p class="card-text">Soporte continuo para todas tus consultas y reclamos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 shadow-sm h-100 card-hover">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt text-success" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                            <h5 class="card-title">Confidencialidad</h5>
+                            <p class="card-text">Tus datos están protegidos y son tratados con confidencialidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Reclamos -->
+    <section id="contacto" class="contacto-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 text-primary fw-bold">Envía tu reclamo y consulta</h2>
+            <p class="text-center text-muted mb-5">Completa todos los campos requeridos para enviar tu reclamo</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <!-- Alerta de error -->
+                            <div id="alert-error" class="alert alert-danger alert-dismissible fade show" role="alert" style="display: none;">
+                                <i class="fas fa-exclamation-circle me-2"></i>
+                                <span id="error-message"></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+
+                            <!-- Alerta de éxito -->
+                            <div id="alert-success" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                                <i class="fas fa-check-circle me-2"></i>
+                                <span id="success-message"></span>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+
+                            <form id="reclamoForm" class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="nombreCompleto" class="form-label fw-bold">
+                                            Nombre Completo <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg bg-light" id="nombreCompleto" 
+                                               placeholder="Ej: Juan Pérez" maxlength="40" required>
+                                        <small class="form-text text-muted">Máximo 40 caracteres</small>
+                                        <div class="invalid-feedback d-block" id="error-nombre"></div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <label for="cargo" class="form-label fw-bold">
+                                            Cargo <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg bg-light" id="cargo" 
+                                               placeholder="Ej: Médico Especialista" maxlength="100" required>
+                                        <small class="form-text text-muted">Máximo 100 caracteres</small>
+                                        <div class="invalid-feedback d-block" id="error-cargo"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="celular" class="form-label fw-bold">
+                                            Celular <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="tel" class="form-control form-control-lg bg-light" id="celular" 
+                                               placeholder="Ej: 342123456789" maxlength="15" required>
+                                        <small class="form-text text-muted">Máximo 15 dígitos</small>
+                                        <div class="invalid-feedback d-block" id="error-celular"></div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <label for="email" class="form-label fw-bold">
+                                            Email <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="email" class="form-control form-control-lg bg-light" id="email" 
+                                               placeholder="Ej: ejemplo@correo.com" maxlength="50" required>
+                                        <small class="form-text text-muted">Máximo 50 caracteres</small>
+                                        <div class="invalid-feedback d-block" id="error-email"></div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <label for="efectorSalud" class="form-label fw-bold">
+                                            Efector de Salud <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg bg-light" id="efectorSalud" 
+                                               placeholder="Ej: Hospital General" maxlength="100" required>
+                                        <small class="form-text text-muted">Máximo 100 caracteres</small>
+                                        <div class="invalid-feedback d-block" id="error-efector"></div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <label for="cuie" class="form-label fw-bold">
+                                            CUIE <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" class="form-control form-control-lg bg-light" id="cuie" 
+                                               placeholder="Ej: S123456" maxlength="10" required>
+                                        <small class="form-text text-muted">Máximo 10 caracteres</small>
+                                        <div class="invalid-feedback d-block" id="error-cuie"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="problematica" class="form-label fw-bold">
+                                        Descripción del Problema <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control form-control-lg bg-light" id="problematica" 
+                                              rows="5" placeholder="Describe detalladamente tu problema o consulta..." 
+                                              maxlength="200" required></textarea>
+                                    <small class="form-text text-muted">Máximo 200 caracteres</small>
+                                    <div class="invalid-feedback d-block" id="error-problematica"></div>
+                                    <small class="d-block mt-2">
+                                        <span id="charCount">0</span>/200 caracteres
+                                    </small>
+                                </div>
+
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button type="reset" class="btn btn-secondary btn-lg">
+                                        <i class="fas fa-redo me-2"></i>Limpiar Formulario
+                                    </button>
+                                    <button type="submit" class="btn btn-primary btn-lg" id="btnEnviar">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Reclamo
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">Programa Sumar +</h5>
+                    <p class="text-muted">Sistema de gestión de reclamos y consultas del Ministerio de Salud de Santa Fe.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3">Enlaces Útiles</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-muted text-decoration-none hover-effect">Inicio</a></li>
+                        <li><a href="#acerca-de" class="text-muted text-decoration-none hover-effect">Acerca de</a></li>
+                        <li><a href="#contacto" class="text-muted text-decoration-none hover-effect">Formulario</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2 text-warning"></i><span class="text-muted">+54 342 XXX-XXXX</span></li>
+                        <li><i class="fas fa-envelope me-2 text-warning"></i><span class="text-muted">info@minsalud-sf.gov.ar</span></li>
+                        <li><i class="fas fa-map-marker-alt me-2 text-warning"></i><span class="text-muted">Santa Fe, Argentina</span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-secondary my-4">
+            <div class="text-center">
+                <p class="text-muted mb-0">&copy; 2024 Ministerio de Salud - Provincia de Santa Fe. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

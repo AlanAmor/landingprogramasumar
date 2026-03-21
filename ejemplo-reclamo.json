@@ -1,0 +1,9 @@
+{
+  "nombreCompleto": "Juan Carlos Pérez López",
+  "cargo": "Médico Especialista en Cardiología",
+  "celular": "3421234567",
+  "email": "juan.perez@ejemplo.com",
+  "efectorSalud": "Hospital General de la Provincia",
+  "cuie": "1234567890",
+  "problematica": "Tengo un problema con la plataforma SUMAR+ que no me permite registrar pacientes de manera correcta. El formulario da error al intentar guardar datos."
+}
