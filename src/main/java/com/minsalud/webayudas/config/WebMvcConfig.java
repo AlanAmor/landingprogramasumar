@@ -13,6 +13,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry
             .addResourceHandler("/**")
             .addResourceLocations("classpath:/static/")
-            .setCachePeriod(0);
+            .setCachePeriod(3600); // Cache estático 1h para mejorar performance
     }
 }

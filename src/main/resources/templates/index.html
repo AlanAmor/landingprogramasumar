@@ -2,8 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="Formulario de reclamos y consultas del Programa Sumar + del Ministerio de Salud Santa Fe. Atención rápida y seguimiento de casos para efectores de salud.">
+    <meta name="keywords" content="Sumar+, reclamos, consultas, salud, Santa Fe, Ministerio de Salud, CUIE, efector de salud">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="http://localhost:8080/">
     <title>Programa Sumar + | Ministerio de Salud Santa Fe</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -13,8 +19,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" style="border-bottom: 3px solid #fbbf24;">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="#home">
-                <img src="/img/minsalud.jpg" alt="Logo Ministerio Salud" class="navbar-logo me-1">
-                <span class="fw-bold">Programa Sumar +</span>
+                <img src="/img/sumar.png" alt="Sumar+" class="me-1 navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -38,13 +43,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section pt-5 mt-5">
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center mb-5 pb-5">
-                <div class="col-lg-6 text-center mb-4 mb-lg-0">
-                    <img src="/img/minsalud3.png" alt="Logo Ministerio de Salud" class="img-fluid logo-hero" style="max-width: 280px; animation: slideInLeft 0.8s ease;">
-                </div>
-                <div class="col-lg-6">
+                <div class="col-12 text-center hero-text">
                     <h1 class="display-3 fw-bold text-primary mb-3" style="animation: slideInRight 0.8s ease;">
                         Bienvenido al
                         <span class="text-warning">Programa Sumar +</span>
@@ -221,15 +223,32 @@
         </div>
     </section>
 
+    <!-- Chatbot FAQ -->
+    <div id="chatbot" class="chatbot-container d-none">
+        <div class="chatbot-header">
+            <span>Chatbot Sumar +</span>
+            <button id="chatbot-close" aria-label="Cerrar chat">×</button>
+        </div>
+        <div id="chatbot-messages" class="chatbot-messages" aria-live="polite" aria-atomic="false"></div>
+        <form id="chatbot-form" class="chatbot-form" aria-label="Formulario de chat">
+            <input id="chatbot-input" type="text" placeholder="Escribe tu pregunta..." aria-label="Pregunta de chatbot" autocomplete="off" />
+            <button type="submit" class="btn btn-warning">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Chatbot bubble -->
+    <button id="chatbot-bubble" class="chatbot-bubble" aria-label="Abrir chatbot" style="display:flex;">💬</button>
+    <div id="chatbot-hint" class="chatbot-hint" style="display:none"><span id="chatbot-hint-text" class="chatbot-hint-text"></span></div>
+
     <!-- Footer -->
     <footer class="bg-dark text-white py-5 mt-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4 mb-md-0">
+            <div class="row footer-columns">
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-3">Programa Sumar +</h5>
-                    <p class="text-muted">Sistema de gestión de reclamos y consultas del Ministerio de Salud de Santa Fe.</p>
+                    <p class="footer-about text-muted text-center">Sistema de gestión de reclamos y consultas del Ministerio de Salud de Santa Fe.</p>
                 </div>
-                <div class="col-md-4 mb-4 mb-md-0">
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-3">Enlaces Útiles</h5>
                     <ul class="list-unstyled">
                         <li><a href="#" class="text-muted text-decoration-none hover-effect">Inicio</a></li>
@@ -237,7 +256,7 @@
                         <li><a href="#contacto" class="text-muted text-decoration-none hover-effect">Formulario</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
+                <div class="col-12 col-md-4">
                     <h5 class="fw-bold mb-3">Contacto</h5>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-phone me-2 text-warning"></i><span class="text-muted">+54 342 XXX-XXXX</span></li>
@@ -246,15 +265,15 @@
                     </ul>
                 </div>
             </div>
-            <hr class="bg-secondary my-4">
+            <hr class="footer-divider my-4">
             <div class="text-center">
-                <p class="text-muted mb-0">&copy; 2024 Ministerio de Salud - Provincia de Santa Fe. Todos los derechos reservados.</p>
+                <p class="text-light mb-0">&copy; 2026 Ministerio de Salud - Provincia de Santa Fe. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js" defer></script>
 </body>
 </html>
