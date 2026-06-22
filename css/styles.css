@@ -46,7 +46,7 @@ section {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/img/minsalud1080.png') center center / cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../img/minsalud1080.png') center center / cover no-repeat;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -280,7 +280,7 @@ section {
 
 /* Contacto Section */
 .contacto-section {
-    background: linear-gradient(rgba(249, 250, 251, 0.85), rgba(229, 231, 235, 0.85)), url('/img/minsalud1080.png') center center / cover no-repeat;
+    background: linear-gradient(rgba(249, 250, 251, 0.85), rgba(229, 231, 235, 0.85)), url('../img/minsalud1080.png') center center / cover no-repeat;
     background-attachment: fixed;
     padding: 120px 20px 100px;
     margin-top: 100px;
